@@ -2,5 +2,6 @@
 
 mkdir -p "$ZDOTDIR"
 
-ln -sf "$DOTFILES/zsh/zshenv" "$HOME/.zshenv"
-ln -sf "$DOTFILES/zsh/zshrc" "$ZDOTDIR/zshrc"
+# Symlink ZSH DOTFILES to respective locations
+ln -sf "$DOTFILES/configs/zsh/zshenv" "$HOME/.zshenv"
+ln -sf "$DOTFILES/configs/zsh/zshrc" "$ZDOTDIR/.zshrc"
