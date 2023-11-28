@@ -3,7 +3,7 @@
 # Source Files
 
 # TODO: This script will create a fresh environment when ran. Needs to be written
-source ./zsh/zshenv
+source ./configs/zsh/zshenv
 
 cat << "EOF"
          88                               
