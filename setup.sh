@@ -16,6 +16,15 @@ a8"    `Y88 a8"     "8a  88    I8[    ""
  `"8bbdP"Y8  `"YbbdP"'   "Y888 `"YbbdP"'
 EOF
 
+# Prompt to continue
+
+echo -e "This script will delete all your configuration files!"
+read -n1 -sp $'Do you wish to continue? [Y/n]\n' key;
+if [[ "$key" =~ ^([^yY]?)$ ]]; then
+  echo "Cancelling Setup."
+  exit 1
+fi
+
 # Setup
 
 . "$DOTFILES/install/install-zsh.sh"
