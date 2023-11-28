@@ -27,6 +27,5 @@ fi
 
 # Setup
 
-. "$DOTFILES/install/install-zsh.sh"
-
+. "$DOTFILES/setup/setup-zsh.sh"
 
