@@ -8,7 +8,7 @@ _CONFIG="$DOTFILES/configs/zsh"
 
 # Add the Plugins directory to the fpath
 fpath=($_CONFIG/plugins $fpath)
-
+29515165
 # Navigation =======================================================================================
 setopt AUTO_CD            # Go to folder path without using cd.
 
@@ -33,6 +33,13 @@ setopt HIST_FIND_NO_DUPS         # Do not display a previously found event.
 setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
 setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
+
+# +------------------------------------------------------------------------------------------------+
+# |                                    Prompt                                                      |
+# +------------------------------------------------------------------------------------------------+
+
+fpath=($_CONFIG/prompt $fpath)
+source $_CONFIG/prompt/prompt_purification_setup
 
 
 # +------------------------------------------------------------------------------------------------+
