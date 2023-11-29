@@ -8,7 +8,6 @@ _CONFIG="$DOTFILES/configs/zsh"
 
 # Add the Plugins directory to the fpath
 fpath=($_CONFIG/plugins $fpath)
-29515165
 # Navigation =======================================================================================
 setopt AUTO_CD            # Go to folder path without using cd.
 
@@ -67,6 +66,13 @@ PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 # export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# +------------------------------------------------------------------------------------------------+
+# |                                   NVM (Node Version Manager)                                   |
+# +------------------------------------------------------------------------------------------------+
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Clean up temporary variables =====================================================================
 unset -m "_*"
