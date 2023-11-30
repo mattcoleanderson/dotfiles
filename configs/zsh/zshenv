@@ -37,5 +37,30 @@ export XDG_PUBLICSHARE_DIR="$HOME/Public"
 export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
-# ZSH ==============================================================================================
+# ZSH
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh" # Base directory for zsh dot files
+# +----------------------------------------------------------------------------+
+# |                        Manually Installed Packages                         |
+# +----------------------------------------------------------------------------+
+
+# +--- NVM (Node Version Manager) -----------------------------------+
+export NVM_DIR="$XDG_DATA_HOME/nvm" # NVM Root
+
+# +--- Cargo (Rust Package Manager)----------------------------------+
+export CARGO_HOME="$XDG_DATA_HOME"/cargo # Cargo Root
+
+# +----------------------------------------------------------------------------+
+# |                        Homebrew Installed Packages                         |
+# +----------------------------------------------------------------------------+
+
+# +--- Homebrew -----------------------------------------------------+
+export HOMEBREW_PREFIX="/opt/homebrew" # Homebrew Root
+
+# +--- Pyenv --------------------------------------------------------+
+export PYENV_ROOT="$XDG_DATA_HOME/pyenv" # Pyenv Root
+
+# +----------------------------------------------------------------------------+
+# |                             Path Modification                              |
+# +----------------------------------------------------------------------------+
+
+PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH" # Homebrew
