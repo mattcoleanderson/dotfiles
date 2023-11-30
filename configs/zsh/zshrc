@@ -34,6 +34,11 @@ setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history
 setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
 
 # +------------------------------------------------------------------------------------------------+
+# |                                             Colors                                             |
+# +------------------------------------------------------------------------------------------------+
+eval "$(gdircolors -b $_CONFIG/dircolors)" # Override directory colors when calling gnu ls ('gls')
+
+# +------------------------------------------------------------------------------------------------+
 # |                                            Aliases                                             |
 # +------------------------------------------------------------------------------------------------+
 
