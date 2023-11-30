@@ -38,7 +38,9 @@ export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
 # ZSH
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh" # Base directory for zsh dot files
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"             # Base directory for zsh dot files
+export HELPDIR="/usr/share/zsh/$ZSH_VERSION/help" # Help files for zsh builtins [1]
+
 # +----------------------------------------------------------------------------+
 # |                        Manually Installed Packages                         |
 # +----------------------------------------------------------------------------+

@@ -36,7 +36,8 @@ setopt HIST_VERIFY               # Do not execute immediately upon history expan
 # +------------------------------------------------------------------------------------------------+
 # |                                             Colors                                             |
 # +------------------------------------------------------------------------------------------------+
-eval "$(gdircolors -b $_CONFIG/dircolors)" # Override directory colors when calling gnu ls ('gls')
+
+eval "$(gdircolors -b $_CONFIG/dircolors)" # Override directory colors when calling gnu ls ('gls') [2]
 
 # +------------------------------------------------------------------------------------------------+
 # |                                            Aliases                                             |
