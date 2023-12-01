@@ -23,4 +23,5 @@ Never prepend or insert.
 5. https://wiki.archlinux.org/title/XDG_user_directories
 6. https://docs.brew.sh/Installation
 7. https://github.com/orgs/Homebrew/discussions/446
+8. https://www.soberkoder.com/better-zsh-history/
 
