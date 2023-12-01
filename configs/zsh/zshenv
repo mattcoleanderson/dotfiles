@@ -8,23 +8,22 @@ export DOTFILES="$REPOS/dotfiles" # Location of this repository
 # +----------------------------------------------------------------------------+
 # |                             XDG Base Directory                             |
 # +----------------------------------------------------------------------------+
+export XDG_HOME=$HOME/.local # Non-standard env I use for setting a Root for XDG
 
-export XDG_HOME=$HOME/.local
-
-# User Directories [3][4]
+# +--- User Directories [3][4] --------------------------------------+
 export XDG_DATA_HOME=$XDG_HOME/share
 export XDG_CONFIG_HOME=$XDG_HOME/config
 export XDG_STATE_HOME=$XDG_HOME/state
 export XDG_CACHE_HOME=$XDG_HOME/cache
 export XDG_RUNTIME_DIR=$XDG_HOME/run
 
-# System Directories [3][4]
+# +--- System Directories [3][4] ------------------------------------+
 # NOTE: I may implement this in the future. I'm not sure that they have many
 #       uses in macOS though. 
 # export XDG_DATA_DIRS
 # export XDG_CONFIG_DIRS
 
-# Custom Directories [5]
+# +--- Custom Directories [5] ---------------------------------------+
 export XDG_BIN_HOME=$XDG_HOME/bin
 export XDG_DESKTOP_DIR="$HOME/Desktop"
 export XDG_DOCUMENTS_DIR="$HOME/Documents"
@@ -35,8 +34,10 @@ export XDG_PUBLICSHARE_DIR="$HOME/Public"
 export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
-# ZSH
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"             # Base directory for zsh dot files
+# +----------------------------------------------------------------------------+
+# |                                    ZSH                                     |
+# +----------------------------------------------------------------------------+
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"             # ZSH Root
 export HELPDIR="/usr/share/zsh/$ZSH_VERSION/help" # Help files for zsh builtins [1]
 
 # +----------------------------------------------------------------------------+
