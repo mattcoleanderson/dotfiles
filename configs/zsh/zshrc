@@ -2,10 +2,17 @@
 #                                            ZSH CONFIG                                            #
 ####################################################################################################
 
-# Local Variables to be unset after execution of this config
-# Prefix all variables with '_'
-_CONFIG="$DOTFILES/configs/zsh"
+# +--- Environment Variables ----------------------------------------+
+# NOTE: Must be first in 'zshrc'
+source $DOTFILES/configs/zsh/env # Environment Variable setup has moved from './zshenv' to here [9]
 
+# +--- Temporary Variables ------------------------------------------+
+# Temporary Variables to be unset after execution of this config
+# Prefix all variables with '_'
+_CONFIG="$DOTFILES/configs/zsh" # Location of zsh dotfile directory
+
+
+# TODO: Find a better spot for this
 # Add the Plugins directory to the fpath
 fpath=($_CONFIG/plugins $fpath)
 # Navigation =======================================================================================
@@ -59,11 +66,7 @@ source $_CONFIG/prompt/prompt_purification_setup
 source $_CONFIG/apps
 
 # +------------------------------------------------------------------------------------------------+
-# |                                  Clean up temporary variables                                  |
+# |                                  Unset Temporary Variables                                     |
 # +------------------------------------------------------------------------------------------------+
 
 unset -m "_*"
-
-# +------------------------------------------------------------------------------------------------+
-# |                                                                                                |
-# +------------------------------------------------------------------------------------------------+

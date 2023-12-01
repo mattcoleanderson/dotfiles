@@ -24,4 +24,4 @@ Never prepend or insert.
 6. https://docs.brew.sh/Installation
 7. https://github.com/orgs/Homebrew/discussions/446
 8. https://www.soberkoder.com/better-zsh-history/
-
+9. https://unix.stackexchange.com/questions/654663/problem-with-zsh-history-file
