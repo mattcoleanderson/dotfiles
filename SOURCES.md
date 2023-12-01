@@ -18,4 +18,7 @@ Never prepend or insert.
 
 1. https://superuser.com/questions/1563825/is-there-a-zsh-equivalent-to-the-bash-help-builtin
 2. https://blog.smittytone.net/2020/06/14/give-macos-terminal-a-better-ls/
+3. https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+4. https://wiki.archlinux.org/title/XDG_Base_Directory
+5. https://wiki.archlinux.org/title/XDG_user_directories
 
