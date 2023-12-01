@@ -55,7 +55,7 @@ export CARGO_HOME="$XDG_DATA_HOME"/cargo # Cargo Root
 # +----------------------------------------------------------------------------+
 
 # +--- Homebrew -----------------------------------------------------+
-export HOMEBREW_PREFIX="/opt/homebrew" # Homebrew Root
+export HOMEBREW_PREFIX="/opt/homebrew" # Homebrew Root [6]
 
 # +--- Pyenv --------------------------------------------------------+
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv" # Pyenv Root
@@ -64,4 +64,4 @@ export PYENV_ROOT="$XDG_DATA_HOME/pyenv" # Pyenv Root
 # |                             Path Modification                              |
 # +----------------------------------------------------------------------------+
 
-PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH" # Homebrew
+PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH" # Homebrew [7]

@@ -21,4 +21,6 @@ Never prepend or insert.
 3. https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 4. https://wiki.archlinux.org/title/XDG_Base_Directory
 5. https://wiki.archlinux.org/title/XDG_user_directories
+6. https://docs.brew.sh/Installation
+7. https://github.com/orgs/Homebrew/discussions/446
 
