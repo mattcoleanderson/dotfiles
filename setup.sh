@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e # instructs the script to exit if any command has a non-zero exit status [10]
+
 # Source Files
 
 # TODO: This script will create a fresh environment when ran. Needs to be written
