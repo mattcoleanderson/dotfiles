@@ -1,0 +1,33 @@
+# Create an Array of files ending in '.zsh'
+typeset -U config_files
+config_files=($DOTFILES/**/*.zsh)
+
+# Load Env Files
+for file in ${(M)config_files:#*/env.zsh}
+do
+  source $file
+done
+
+# Load Path Files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
+done
+
+# Load everything but Env, Path, and Completion Files
+for file in ${config_files:#*(env|path|completion).zsh}
+do
+  source $file
+done
+
+# Initialize autocomplete
+autoload -U compinit
+compinit
+
+# Load Completion Files
+for file in ${(M)config_files:#*/completion.zsh}
+do
+  source $file
+done
+
+unset config_files
