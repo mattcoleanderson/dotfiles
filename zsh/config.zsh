@@ -2,10 +2,6 @@
 #                                            ZSH CONFIG                                            #
 ####################################################################################################
 
-# TODO: Find a better spot for this
-# Add the Plugins directory to the fpath
-fpath=($DOTFILES/zsh/plugins $fpath)
-
 # +----------------------------------------------------------------------------+
 # |                                 Navigation                                 |
 # +----------------------------------------------------------------------------+
@@ -39,10 +35,3 @@ setopt HIST_VERIFY               # Do not execute immediately upon history expan
 
 # TODO: maybe move this under a `system` directory
 eval "$(gdircolors -b $DOTFILES/zsh/dircolors)" # Override directory colors when calling gnu ls ('gls') [2]
-
-# +----------------------------------------------------------------------------+
-# |                                   Prompt                                   |
-# +----------------------------------------------------------------------------+
-
-# TODO: Remove this and make an fpath.zsh
-fpath=($DOTFILES/prompt $fpath)

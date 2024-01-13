@@ -15,7 +15,7 @@ do
 done
 
 # Load everything but Env, Path, and Completion Files
-for file in ${config_files:#*(env|path|completion).zsh}
+for file in ${config_files:#*/(env|path|completion).zsh}
 do
   source $file
 done
