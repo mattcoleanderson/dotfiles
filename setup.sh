@@ -3,17 +3,27 @@
 # instructs the script to exit if any command has a non-zero exit status [10]
 set -e
 
-# Source Files
-
-# TODO: This script will create a fresh environment when ran. Needs to be written
-# source ./configs/zsh/zshenv
-
 DOTFILES=$(pwd -P)
 XDG_CONFIG_HOME=$HOME/.local/config
+
+# Source Files
+source $DOTFILES/system/colors.sh # Colors for formatting printf commands
 
 # +----------------------------------------------------------------------------+
 # |                                 Functions                                  |
 # +----------------------------------------------------------------------------+
+
+info () {
+  printf "[ ${light_blue}..${default} ] %s\n" "$1"
+}
+
+success () {
+  printf "[ ${light_green}OK${default} ] %s\n" "$1"
+}
+
+fail () {
+  printf "[${light_red}FAIL${default}] %s\n" "$1"
+}
 
 run_prompt () {
   # Prompt to continue
@@ -23,10 +33,6 @@ run_prompt () {
     echo "Cancelling Setup."
     exit 1
   fi
-}
-
-info () {
-  printf "\r $1\n"
 }
 
 create_env_config () {
@@ -40,9 +46,9 @@ create_env_config () {
       "# This file is unversioned and should NOT be added to version control" \
       > ./env/env.zsh
 
-    info 'env.zsh successfully created'
+    success 'env.zsh successfully created'
   else
-    info 'env.zsh already exists'
+    success 'env.zsh already exists'
   fi
 }
 
@@ -57,13 +63,13 @@ link_file () {
   mkdir -p $(dirname $dst)
 
   ln -sf "$src" "$dst"
-  info "linked $src to $dst"
+  success "linked $src to $dst"
 }
 
 run_dotfiles () {
   # . "$DOTFILES/setup/setup-zsh.sh"
 
-  info 'install dotfiles'
+  info 'installng dotfiles'
 
   for src in $(find -H "$DOTFILES" -maxdepth 2 -name '*.symlink')
   do
