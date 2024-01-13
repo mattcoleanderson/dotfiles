@@ -44,4 +44,5 @@ eval "$(gdircolors -b $DOTFILES/zsh/dircolors)" # Override directory colors when
 # |                                   Prompt                                   |
 # +----------------------------------------------------------------------------+
 
-fpath=($DOTFILES/configs/zsh/prompt $fpath)
+# TODO: Remove this and make an fpath.zsh
+fpath=($DOTFILES/prompt $fpath)
