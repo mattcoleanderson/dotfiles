@@ -2,19 +2,10 @@
 #                                            ZSH CONFIG                                            #
 ####################################################################################################
 
-# +--- Environment Variables ----------------------------------------+
-# NOTE: Must be first in 'zshrc'
-source $DOTFILES/configs/zsh/env # Environment Variable setup has moved from './zshenv' to here [9]
-
-# +--- Temporary Variables ------------------------------------------+
-# Temporary Variables to be unset after execution of this config
-# Prefix all variables with '_'
-_CONFIG="$DOTFILES/configs/zsh" # Location of zsh dotfile directory
-
-
 # TODO: Find a better spot for this
 # Add the Plugins directory to the fpath
-fpath=($_CONFIG/plugins $fpath)
+fpath=($DOTFILES/zsh/plugins $fpath)
+
 # +----------------------------------------------------------------------------+
 # |                                 Navigation                                 |
 # +----------------------------------------------------------------------------+
@@ -46,35 +37,14 @@ setopt HIST_VERIFY               # Do not execute immediately upon history expan
 # |                                   Colors                                   |
 # +----------------------------------------------------------------------------+
 
-eval "$(gdircolors -b $_CONFIG/dircolors)" # Override directory colors when calling gnu ls ('gls') [2]
-
-# +----------------------------------------------------------------------------+
-# |                                  Aliases                                   |
-# +----------------------------------------------------------------------------+
-
-source $DOTFILES/configs/aliases/aliases
+# TODO: maybe move this under a `system` directory
+eval "$(gdircolors -b $DOTFILES/zsh/dircolors)" # Override directory colors when calling gnu ls ('gls') [2]
 
 # +----------------------------------------------------------------------------+
 # |                                   Prompt                                   |
 # +----------------------------------------------------------------------------+
 
-fpath=($_CONFIG/prompt $fpath)
-source $_CONFIG/prompt/prompt_purification_setup
-
-# +----------------------------------------------------------------------------+
-# |                                Completions                                 |
-# +----------------------------------------------------------------------------+
-
-source $_CONFIG/completion
-
-# +----------------------------------------------------------------------------+
-# |                                Apps & Tools                                |
-# +----------------------------------------------------------------------------+
-
-source $_CONFIG/apps
-
-# +----------------------------------------------------------------------------+
-# |                         Unset Temporary Variables                          |
-# +----------------------------------------------------------------------------+
-
-unset _CONFIG
+# TODO: add .zsh to prompt_purification_setup in its respective repo
+# TODO: remove source of prompt_purification_setup
+fpath=($DOTFILES/zsh/prompt $fpath)
+source $DOTFILES/configs/zsh/prompt/prompt_purification_setup

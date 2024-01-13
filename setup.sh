@@ -6,10 +6,13 @@ set -e
 # Source Files
 
 # TODO: This script will create a fresh environment when ran. Needs to be written
-source ./configs/zsh/zshenv
+# source ./configs/zsh/zshenv
+
+DOTFILES=$(pwd -P)
+XDG_CONFIG_HOME=$HOME/.local/config
 
 # +----------------------------------------------------------------------------+
-# |                               Confirm Setup                                |
+# |                                 Functions                                  |
 # +----------------------------------------------------------------------------+
 
 run_prompt () {
@@ -48,8 +51,31 @@ run_installers () {
   find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
 }
 
+link_file () {
+  local src=$1 dst=$2
+
+  mkdir -p $(dirname $dst)
+
+  ln -sf "$src" "$dst"
+  info "linked $src to $dst"
+}
+
 run_dotfiles () {
-  . "$DOTFILES/setup/setup-zsh.sh"
+  # . "$DOTFILES/setup/setup-zsh.sh"
+
+  info 'install dotfiles'
+
+  for src in $(find -H "$DOTFILES" -maxdepth 2 -name '*.symlink')
+  do
+    if [[ $(basename $src .symlink) == 'zshenv' ]]
+    then
+      dst="$HOME/.$(basename $src .symlink)"
+    else
+      dst="$XDG_CONFIG_HOME/$(basename $(dirname $src))/.$(basename $src .symlink)"
+    fi
+
+    link_file "$src" "$dst"
+  done
 }
 
 
@@ -72,5 +98,5 @@ EOF
 
 run_prompt
 create_env_config
-# run_dotfiles
+run_dotfiles
 
