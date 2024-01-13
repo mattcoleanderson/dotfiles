@@ -44,7 +44,4 @@ eval "$(gdircolors -b $DOTFILES/zsh/dircolors)" # Override directory colors when
 # |                                   Prompt                                   |
 # +----------------------------------------------------------------------------+
 
-# TODO: add .zsh to prompt_purification_setup in its respective repo
-# TODO: remove source of prompt_purification_setup
-fpath=($DOTFILES/zsh/prompt $fpath)
-source $DOTFILES/configs/zsh/prompt/prompt_purification_setup
+fpath=($DOTFILES/configs/zsh/prompt $fpath)
