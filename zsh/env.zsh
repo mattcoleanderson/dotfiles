@@ -4,6 +4,7 @@
 ####################################################################################################
 #               NOTE: Environment Variable setup has moved here from './zshenv' [9]                #
 ####################################################################################################
+# TODO: put most of these into invidual folders
 
 export REPOS="$HOME/repos" # Location of all my version controlled projects
 

@@ -28,10 +28,3 @@ setopt HIST_FIND_NO_DUPS         # Do not display a previously found event.
 setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
 setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
-
-# +----------------------------------------------------------------------------+
-# |                                   Colors                                   |
-# +----------------------------------------------------------------------------+
-
-# TODO: maybe move this under a `system` directory
-eval "$(gdircolors -b $DOTFILES/zsh/dircolors)" # Override directory colors when calling gnu ls ('gls') [2]
