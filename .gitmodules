@@ -1,3 +1,6 @@
-[submodule "configs/zsh/prompt"]
+[submodule "prompt"]
 	path = prompt
 	url = git@github.com:mattcoleanderson/purified.git
+[submodule "nvim.symlink"]
+	path = nvim.symlink
+	url = git@github.com:mattcoleanderson/nvim.git
