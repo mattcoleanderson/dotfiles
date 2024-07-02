@@ -62,7 +62,7 @@ link_file () {
 
   mkdir -p $(dirname $dst)
 
-  ln -sf "$src" "$dst"
+  ln -nsf "$src" "$dst"
   success "linked $src to $dst"
 }
 
