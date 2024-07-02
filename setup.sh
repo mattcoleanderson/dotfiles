@@ -73,11 +73,15 @@ run_dotfiles () {
 
   for src in $(find -H "$DOTFILES" -maxdepth 2 -name '*.symlink')
   do
-    if [[ $(basename $src .symlink) == 'zshenv' ]]
-    then
-      dst="$HOME/.$(basename $src .symlink)"
+    # Symlink .zshenv to home dir
+    if [[ $(basename $src .symlink) == '.zshenv' ]]; then
+      dst="$HOME/$(basename $src .symlink)"
+    # Symlink directories
+    elif [[ $(basename $(dirname $src)) == 'dotfiles' ]]; then
+      dst="$XDG_CONFIG_HOME/$(basename $src .symlink)"
+    # Symlink files
     else
-      dst="$XDG_CONFIG_HOME/$(basename $(dirname $src))/.$(basename $src .symlink)"
+      dst="$XDG_CONFIG_HOME/$(basename $(dirname $src))/$(basename $src .symlink)"
     fi
 
     link_file "$src" "$dst"

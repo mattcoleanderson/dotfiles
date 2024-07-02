@@ -27,6 +27,7 @@ export XDG_RUNTIME_DIR=$XDG_HOME/run
 
 # +--- Custom Directories [5] ---------------------------------------+
 export XDG_BIN_HOME=$XDG_HOME/bin
+export XDG_SRC_HOME=$XDG_HOME/src
 export XDG_DESKTOP_DIR="$HOME/Desktop"
 export XDG_DOCUMENTS_DIR="$HOME/Documents"
 export XDG_DOWNLOAD_DIR="$HOME/Downloads"
