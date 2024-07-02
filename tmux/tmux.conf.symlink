@@ -1,0 +1,25 @@
+# https://hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
+
+# Window Options
+set-window-option -g mode-keys vi # Change to vim mode for vim like commands
+
+# Session Options
+
+# Set prefix key to Ctrl+Space
+# If on MacOS, make sure to disable the Ctrl+Space shortcut for Input Sources
+unbind C-b
+set-option -g prefix C-Space
+bind-key C-Space send-prefix
+
+set-option -g mouse on            # Enable mouse control (clickable windows, panes, resizable panes)
+set-option -g allow-rename off    # Disable automatic window renaming
+
+# Remaps
+# Switch panes using Meta-arrow without prefix
+bind -n M-h select-pane -L
+bind -n M-j select-pane -U
+bind -n M-k select-pane -D
+bind -n M-l select-pane -R
+
+# bind r to reloading the tmux.conf
+bind r source-file "$XDG_CONFIG_HOME/tmux/tmux.conf" \; display-message "tmux.conf reloaded"
