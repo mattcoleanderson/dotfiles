@@ -1,0 +1,29 @@
+# sets the default layout from the following: bsp, stack, or float
+# bsp stands for binary spaced partitioning
+yabai -m config layout bsp
+
+# When a new window is added vertically it will go to right
+#                            horizontaly it will go to bottom
+yabai -m config window_placement second_child
+
+# padding (num is in pixels)
+yabai -m config top_padding 12
+yabai -m config bottom_padding 12
+yabai -m config left_padding 12
+yabai -m config right_padding 12
+yabai -m config window_gap 12
+
+# mouse settings
+yabai -m config mouse_follows_focus on # mouse will move to window when focus is changed
+
+# can be cmd, alt, shift, ctrl, or fn
+yabai -m config mouse_modifier alt    # alt plus the following
+yabai -m config mouse_aciton1 move    # left click + drag, moves the window
+yabai -m config mouse_action2 resize  # right click + drag, resizes the window
+
+# When a window is dragged to the center of another, they will be swapped
+yabai -m config mouse_drop_action swap
+
+# Disable specific apps
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
