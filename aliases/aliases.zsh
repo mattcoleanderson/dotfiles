@@ -7,7 +7,7 @@
 # unalias run-help && autoload run-help && alias help=run-help # Setup ZSH run-help function [1]
 
 # +--- ls -----------------------------------------------------------+
-if [ "$OS" == "Darwin" ]; then
+if [[ "$OS" == "Darwin" ]]; then
   alias ls='gls --color=auto'                                # Basic list
   alias la='gls --color=auto -A'                             # Basic list, Show Hidden
   alias ll='gls --color=auto --group-directories-first -l'   # Long Format, Directories first
