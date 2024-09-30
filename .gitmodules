@@ -1,6 +1,7 @@
 [submodule "prompt"]
-	path = prompt
-	url = git@github.com:mattcoleanderson/purified.git
+  path = prompt
+  url = git@github.com:mattcoleanderson/purified.git
 [submodule "nvim"]
-	path = nvim.symlink
-	url = git@github.com:mattcoleanderson/nvim.git
+  path = nvim.symlink
+  url = git@github.com:mattcoleanderson/nvim.git
+  branch = main
