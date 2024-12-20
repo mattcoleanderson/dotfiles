@@ -21,8 +21,7 @@ do
 done
 
 # Initialize autocomplete
-autoload -U compinit
-compinit
+autoload -Uz compinit && compinit
 
 # Load Completion Files
 for file in ${(M)config_files:#*/completion.zsh}
