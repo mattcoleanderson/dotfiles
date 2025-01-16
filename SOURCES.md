@@ -26,3 +26,4 @@ Never prepend or insert.
 8. https://www.soberkoder.com/better-zsh-history/
 9. https://unix.stackexchange.com/questions/654663/problem-with-zsh-history-file
 10. https://gist.github.com/vncsna/64825d5609c146e80de8b1fd623011ca
+11. https://unix.stackexchange.com/a/244516

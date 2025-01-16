@@ -3,6 +3,10 @@
 #                                             Aliases                                              #
 ####################################################################################################
 
+
+# +--- misc ---------------------------------------------------------+
+alias xargs='xargs ' # Causes alias expansion, so xargs can be used with aliases [11]
+
 # +--- ZSH ----------------------------------------------------------+
 # unalias run-help && autoload run-help && alias help=run-help # Setup ZSH run-help function [1]
 
