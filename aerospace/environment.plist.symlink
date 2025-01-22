@@ -6,10 +6,9 @@
     <string>environment</string>
     <key>ProgramArguments</key>
     <array>
-      <string>launchctl</string>
-      <string>setenv</string>
-      <string>XDG_CONFIG_HOME</string>
-      <string>~/.local/config/</string>
+      <string>/bin/bash</string>
+      <string>-c</string>
+      <string>launchctl setenv XDG_CONFIG_HOME "$HOME/.local/config/"</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
