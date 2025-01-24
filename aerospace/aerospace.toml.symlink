@@ -110,70 +110,28 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-1 = 'workspace 1'
-alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'
-alt-4 = 'workspace 4'
-alt-5 = 'workspace 5'
-alt-6 = 'workspace 6'
-alt-7 = 'workspace 7'
-alt-8 = 'workspace 8'
-alt-9 = 'workspace 9'
-alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
-alt-b = 'workspace B'
-alt-c = 'workspace C'
-alt-d = 'workspace D'
-alt-e = 'workspace E'
-alt-f = 'workspace F'
-alt-g = 'workspace G'
-alt-i = 'workspace I'
-alt-m = 'workspace M'
-alt-n = 'workspace N'
-alt-o = 'workspace O'
-alt-p = 'workspace P'
-alt-q = 'workspace Q'
-alt-r = 'workspace R'
-alt-s = 'workspace S'
-alt-t = 'workspace T'
-alt-u = 'workspace U'
-alt-v = 'workspace V'
-alt-w = 'workspace W'
-alt-x = 'workspace X'
-alt-y = 'workspace Y'
-alt-z = 'workspace Z'
+alt-shift-ctrl-cmd-1 = 'workspace 1.Main'
+alt-shift-ctrl-cmd-2 = 'workspace 2.Browse'
+alt-shift-ctrl-cmd-3 = 'workspace 3.Code'
+alt-shift-ctrl-cmd-4 = 'workspace 4.Comms'
+alt-shift-ctrl-cmd-5 = 'workspace 5.System'
+alt-shift-ctrl-cmd-6 = 'workspace 6.Other'
+alt-shift-ctrl-cmd-7 = 'workspace 7'
+alt-shift-ctrl-cmd-8 = 'workspace 8'
+alt-shift-ctrl-cmd-9 = 'workspace 9'
+alt-shift-ctrl-cmd-0 = 'workspace 10'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
-alt-shift-5 = 'move-node-to-workspace 5'
-alt-shift-6 = 'move-node-to-workspace 6'
-alt-shift-7 = 'move-node-to-workspace 7'
-alt-shift-8 = 'move-node-to-workspace 8'
-alt-shift-9 = 'move-node-to-workspace 9'
-alt-shift-a = 'move-node-to-workspace A'
-alt-shift-b = 'move-node-to-workspace B'
-alt-shift-c = 'move-node-to-workspace C'
-alt-shift-d = 'move-node-to-workspace D'
-alt-shift-e = 'move-node-to-workspace E'
-alt-shift-f = 'move-node-to-workspace F'
-alt-shift-g = 'move-node-to-workspace G'
-alt-shift-i = 'move-node-to-workspace I'
-alt-shift-m = 'move-node-to-workspace M'
-alt-shift-n = 'move-node-to-workspace N'
-alt-shift-o = 'move-node-to-workspace O'
-alt-shift-p = 'move-node-to-workspace P'
-alt-shift-q = 'move-node-to-workspace Q'
-alt-shift-r = 'move-node-to-workspace R'
-alt-shift-s = 'move-node-to-workspace S'
-alt-shift-t = 'move-node-to-workspace T'
-alt-shift-u = 'move-node-to-workspace U'
-alt-shift-v = 'move-node-to-workspace V'
-alt-shift-w = 'move-node-to-workspace W'
-alt-shift-x = 'move-node-to-workspace X'
-alt-shift-y = 'move-node-to-workspace Y'
-alt-shift-z = 'move-node-to-workspace Z'
+alt-shift-ctrl-1 = 'move-node-to-workspace 1.Main'
+alt-shift-ctrl-2 = 'move-node-to-workspace 2.Browse'
+alt-shift-ctrl-3 = 'move-node-to-workspace 3.Code'
+alt-shift-ctrl-4 = 'move-node-to-workspace 4.Comms'
+alt-shift-ctrl-5 = 'move-node-to-workspace 5.System'
+alt-shift-ctrl-6 = 'move-node-to-workspace 6.Other'
+alt-shift-ctrl-7 = 'move-node-to-workspace 7'
+alt-shift-ctrl-8 = 'move-node-to-workspace 8'
+alt-shift-ctrl-9 = 'move-node-to-workspace 9'
+alt-shift-ctrl-0 = 'move-node-to-workspace 10'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -198,4 +156,74 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
+
+
+# Window rules
+# https://nikitabobko.github.io/AeroSpace/guide#callbacks
+#
+# To get app-id:
+# - https://nikitabobko.github.io/AeroSpace/goodness#popular-apps-ids
+# - `aerospace list-apps`
+
+# Workspace 1 Main
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'
+run = ['move-node-to-workspace 1.Main']
+
+[[on-window-detected]]
+if.app-id = 'com.flexibits.fantastical2.mac'
+run = ['move-node-to-workspace 1.Main']
+
+[[on-window-detected]]
+if.app-id = 'com.todoist.mac.Todoist'
+run = ['move-node-to-workspace 1.Main']
+
+# Workspace 2 Browse
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+run = ['move-node-to-workspace 2.Browse']
+
+# Workspace 3 Code
+[[on-window-detected]]
+if.app-id = 'com.googlecode.iterm2'
+run = ['move-node-to-workspace 3.Code']
+
+# Workspace 4 Comms
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+run = ['move-node-to-workspace 4.Comms']
+
+[[on-window-detected]]
+if.app-id = 'ch.protonmail.desktop'
+run = ['move-node-to-workspace 4.Comms']
+
+# Workspace 5 System
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = ['move-node-to-workspace 5.System']
+
+
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = ['layout floating', 'move-node-to-workspace 5.System']
+
+
+[[on-window-detected]]
+if.app-id = 'io.zsa.keymapp'
+run = ['move-node-to-workspace 5.System']
+
+# Workspace 6 Other
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Excel'
+run = ['move-node-to-workspace 6.Other']
+
+
+# Choose monitor to put each workspace on
+[workspace-to-monitor-force-assignment]
+'1.Main' = ['ka270h', 'seconday', 'main']
+'2.Browse' = 'main'
+'3.Code' = 'main'
+'4.Comms' = ['built-in', 'secondary', 'main']
+'5.System' = ['built-in', 'secondary', 'main']
+'6.Other' = 'main'
 
