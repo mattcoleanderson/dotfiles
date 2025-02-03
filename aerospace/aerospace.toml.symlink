@@ -181,6 +181,7 @@ run = ['move-node-to-workspace 1.Main']
 # Workspace 2 Browse
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
+if.during-aerospace-startup = true
 run = ['move-node-to-workspace 2.Browse']
 
 # Workspace 3 Code
