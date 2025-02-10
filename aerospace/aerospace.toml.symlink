@@ -110,9 +110,9 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-shift-ctrl-cmd-1 = 'workspace 1.Main'
+alt-shift-ctrl-cmd-1 = 'workspace 1.Code'
 alt-shift-ctrl-cmd-2 = 'workspace 2.Browse'
-alt-shift-ctrl-cmd-3 = 'workspace 3.Code'
+alt-shift-ctrl-cmd-3 = 'workspace 3.Entertainment'
 alt-shift-ctrl-cmd-4 = 'workspace 4.Comms'
 alt-shift-ctrl-cmd-5 = 'workspace 5.System'
 alt-shift-ctrl-cmd-6 = 'workspace 6.Other'
@@ -122,9 +122,9 @@ alt-shift-ctrl-cmd-9 = 'workspace 9'
 alt-shift-ctrl-cmd-0 = 'workspace 10'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-ctrl-1 = 'move-node-to-workspace 1.Main'
+alt-shift-ctrl-1 = 'move-node-to-workspace 1.Code'
 alt-shift-ctrl-2 = 'move-node-to-workspace 2.Browse'
-alt-shift-ctrl-3 = 'move-node-to-workspace 3.Code'
+alt-shift-ctrl-3 = 'move-node-to-workspace 3.Entertainment'
 alt-shift-ctrl-4 = 'move-node-to-workspace 4.Comms'
 alt-shift-ctrl-5 = 'move-node-to-workspace 5.System'
 alt-shift-ctrl-6 = 'move-node-to-workspace 6.Other'
@@ -165,18 +165,10 @@ alt-shift-l = ['join-with right', 'mode main']
 # - https://nikitabobko.github.io/AeroSpace/goodness#popular-apps-ids
 # - `aerospace list-apps`
 
-# Workspace 1 Main
+# Workspace 1 Code
 [[on-window-detected]]
-if.app-id = 'com.apple.Music'
-run = ['move-node-to-workspace 1.Main']
-
-[[on-window-detected]]
-if.app-id = 'com.flexibits.fantastical2.mac'
-run = ['move-node-to-workspace 1.Main']
-
-[[on-window-detected]]
-if.app-id = 'com.todoist.mac.Todoist'
-run = ['move-node-to-workspace 1.Main']
+if.app-id = 'com.googlecode.iterm2'
+run = ['move-node-to-workspace 1.Code']
 
 # Workspace 2 Browse
 [[on-window-detected]]
@@ -184,10 +176,18 @@ if.app-id = 'company.thebrowser.Browser'
 if.during-aerospace-startup = true
 run = ['move-node-to-workspace 2.Browse']
 
-# Workspace 3 Code
+# Workspace 3 Entertainment
 [[on-window-detected]]
-if.app-id = 'com.googlecode.iterm2'
-run = ['move-node-to-workspace 3.Code']
+if.app-id = 'com.apple.Music'
+run = ['move-node-to-workspace 3.Entertainment']
+
+[[on-window-detected]]
+if.app-id = 'com.flexibits.fantastical2.mac'
+run = ['move-node-to-workspace 3.Entertainment']
+
+[[on-window-detected]]
+if.app-id = 'com.todoist.mac.Todoist'
+run = ['move-node-to-workspace 3.Entertainment']
 
 # Workspace 4 Comms
 [[on-window-detected]]
@@ -221,9 +221,9 @@ run = ['move-node-to-workspace 6.Other']
 
 # Choose monitor to put each workspace on
 [workspace-to-monitor-force-assignment]
-'1.Main' = ['ka270h', 'seconday', 'main']
+'1.Code' = ['ka270h', 'seconday', 'main']
 '2.Browse' = 'main'
-'3.Code' = 'main'
+'3.Entertainment' = 'main'
 '4.Comms' = ['built-in', 'secondary', 'main']
 '5.System' = ['built-in', 'secondary', 'main']
 '6.Other' = 'main'
