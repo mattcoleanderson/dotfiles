@@ -1,0 +1,9 @@
+[user]
+  name = "Matt Cole Anderson"
+  email = "git@mattcoleanderson.com"
+
+[pull]
+	ff = only
+
+[includeIf "gitdir:~/repos/work/"]
+  path = ./config-work
