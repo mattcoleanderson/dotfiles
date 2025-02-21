@@ -136,7 +136,7 @@ m = 'mode move'
 #     See: https://nikitabobko.github.io/AeroSpace/commands#resize
 minus = 'resize smart -50'
 equal = 'resize smart +50'
-b = 'balance-sizes'
+b = ['balance-sizes', 'mode main']
 
 # Layout - change layout between tiles and accordion
 #     See: https://nikitabobko.github.io/AeroSpace/commands#layout
