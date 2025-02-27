@@ -6,9 +6,21 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-# after-startup-command = [
-#   'exec-and-forget borders active_color=0xffe2e2e3 inactive_color=0xff414550 width=6.0'
-# ]
+after-startup-command = [
+  # 'exec-and-forget borders active_color=0xffe2e2e3 inactive_color=0xff414550 width=6.0'
+  'move-workspace-to-monitor --workspace 1.Code ka270h secondary main',
+  'move-workspace-to-monitor --workspace 2.Browse main',
+  'move-workspace-to-monitor --workspace 3.Entertainment main',
+  'move-workspace-to-monitor --workspace 4.Comms main',
+  'move-workspace-to-monitor --workspace 5.System secondary main',
+  'move-workspace-to-monitor --workspace 6.Productivity main',
+  'move-workspace-to-monitor --workspace 7 secondary main',
+  'move-workspace-to-monitor --workspace 8 main',
+  'move-workspace-to-monitor --workspace 9 secondary main',
+  'move-workspace-to-monitor --workspace 10 main',
+  'workspace 1.Code', 'workspace 2.Browse',
+  'workspace 1.Code', 'workspace 2.Browse',
+]
 
 # Start AeroSpace at login
 start-at-login = true
@@ -138,6 +150,9 @@ minus = 'resize smart -50'
 equal = 'resize smart +50'
 b = ['balance-sizes', 'mode main']
 
+# Swap Monitors
+s = 'exec-and-forget ~/repos/dotfiles/aerospace/swap-workspace-monitors.sh --wrap-around next'
+
 # Layout - change layout between tiles and accordion
 #     See: https://nikitabobko.github.io/AeroSpace/commands#layout
 t = ['layout tiles horizontal vertical', 'mode main']
@@ -263,11 +278,12 @@ run = ['move-node-to-workspace 5.System']
 # Workspace 6.Productivity
 
 # Choose monitor to put each workspace on
-[workspace-to-monitor-force-assignment]
-'1.Code' = ['ka270h', 'seconday', 'main']
-'2.Browse' = 'main'
-'3.Entertainment' = 'main'
-'4.Comms' = ['built-in', 'secondary', 'main']
-'5.System' = ['built-in', 'secondary', 'main']
-'6.Productivity' = 'main'
+# [workspace-to-monitor-force-assignment]
+# '1.Code' = ['ka270h', 'seconday', 'main']
+# '2.Browse' = 'main'
+# '3.Entertainment' = 'main'
+# '4.Comms' = 'main'
+# '5.System' = ['secondary', 'main']
+# '6.Productivity' = 'main'
+# '7' = 'built-in'
 
