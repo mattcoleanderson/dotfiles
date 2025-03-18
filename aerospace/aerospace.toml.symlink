@@ -171,6 +171,8 @@ g = [                                                           # Grid Layout of
   'mode main'
 ]
 
+f = ['fullscreen', 'mode main']
+
 # Join Binding - Sub binding of Layout to join apps
 #     See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.join.binding]
