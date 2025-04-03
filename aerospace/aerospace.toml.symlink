@@ -215,6 +215,11 @@ backspace = ['close-all-windows-but-current', 'mode main']
 # - https://nikitabobko.github.io/AeroSpace/goodness#popular-apps-ids
 # - `aerospace list-apps`
 
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = ['layout floating']
+
+
 # Workspace 1 Code
 [[on-window-detected]]
 if.app-id = 'com.googlecode.iterm2'
@@ -269,10 +274,6 @@ if.app-id = 'com.microsoft.teams2'
 run = ['move-node-to-workspace 4.Comms']
 
 # Workspace 5 System
-[[on-window-detected]]
-if.app-id = 'com.apple.systempreferences'
-run = ['layout floating', 'move-node-to-workspace 5.System']
-
 [[on-window-detected]]
 if.app-id = 'io.zsa.keymapp'
 run = ['move-node-to-workspace 5.System']
