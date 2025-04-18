@@ -19,6 +19,16 @@ export HISTSIZE=10000                # Number of commands loadded into memory fr
 export SAVEHIST=10000                # Number of commands stored in zsh history file
 
 # +----------------------------------------------------------------------------+
-# |                             Path Modification                              |
+# |                             Miscellanious                                  |
 # +----------------------------------------------------------------------------+
+
+# TODO: Find a way to set these here in the else, but set them to nvr in `neovim-remote`
+# this way we don't fail everything if nvr isn't installed
+if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+    export VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+    export EDITOR="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+else
+    export VISUAL="nvim"
+    export EDITOR="nvim"
+fi
 
