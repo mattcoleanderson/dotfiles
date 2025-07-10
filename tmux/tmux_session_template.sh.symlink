@@ -18,28 +18,33 @@ start_main () {
   tmux attach -t $SESSION_NAME
 }
 
-start_acc () {
+start_tanf () {
   # Constants
-  SESSION_NAME="acc"
-  SESSION_DEFAULT_DIR=~/repos/work/AutoCallCenter/
+  SESSION_NAME="tanf"
   
-  WINDOW_0_DIR=~/repos/work/AutoCallCenter/acc-terraform/
-  WINDOW_1_DIR=~/repos/work/AutoCallCenter/acc-webhook-lambda/
-  WINDOW_2_DIR=~/repos/work/AutoCallCenter/acc-auto-call-worker/
+  # Directories
+  TANF_ROOT_DIR=~/repos/work/TANF-app/
+  TANF_FRONTEND_DIR=~/repos/work/TANF-app/tdrs-frontend/
+  TANF_BACKEND_DIR=~/repos/work/TANF-app/tdrs-backend/
 
   # Start new session with the name, or attach if it already exists
-  tmux new-session -ds $SESSION_NAME -c $SESSION_DEFAULT_DIR || tmux attach -t $SESSION_NAME
+  tmux new-session -ds $SESSION_NAME -c $TANF_ROOT_DIR || tmux attach -t $SESSION_NAME
 
-  # Create a new window
-  tmux rename-window -t $SESSION_NAME:0 "terraform"
-  tmux new-window -t $SESSION_NAME:1 -n "lambda" -c $WINDOW_1_DIR
-  tmux new-window -t $SESSION_NAME:2 -n "worker" -c $WINDOW_2_DIR
+  # Setup code window
+  tmux rename-window -t $SESSION_NAME:0 "code"
 
-  # Run commands in each window
-  tmux send-keys -t $SESSION_NAME:0 "cd $WINDOW_0_DIR && nvim" C-m
-  # tmux send-keys -t $SESSION_NAME:0 'cd ~/repos/work/AutoCallCenter/acc-terraform && nvim' C-m
-  tmux send-keys -t $SESSION_NAME:1 'nvim' C-m
-  tmux send-keys -t $SESSION_NAME:2 'nvim' C-m
+  # Run code on window
+  tmux send-keys -t $SESSION_NAME:0 "cd $TANF_ROOT_DIR && nvim" C-m
+
+  # Setup server window
+  tmux new-window -t $SESSION_NAME:1 -n "srv" -c $TANF_BACKEND_DIR
+  tmux split-window -h -t $SESSION_NAME:1 -c $TANF_FRONTEND_DIR
+  tmux split-window -v -t $SESSION_NAME:1.1 -c $TANF_FRONTEND_DIR
+
+  # Run code on window panes
+  tmux send-keys -t $SESSION_NAME:1.0 'docker compose up --build' C-m
+  tmux send-keys -t $SESSION_NAME:1.1 'docker compose up --build' C-m
+  tmux send-keys -t $SESSION_NAME:1.2 'PORT=3001 npm run start' C-m
 
   tmux attach -t $SESSION_NAME
 }
@@ -48,7 +53,7 @@ run_prompt () {
   # Start sessions
   echo "Please choose a tmux session to start:"
   echo -e "\t0 - Main (general purpose)"
-  echo -e "\t1 - Automated Call Center (First Orion project)"
+  echo -e "\t1 - TANF (Raft Project)"
 
   read -p "Enter a number from above: " choice
   case "$choice" in
@@ -56,7 +61,7 @@ run_prompt () {
       start_main
       ;;
     1)
-      start_acc
+      start_tanf
       ;;
     *)
       echo "$choice is not a valid option"
