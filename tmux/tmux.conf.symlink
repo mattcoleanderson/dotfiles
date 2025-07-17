@@ -1,5 +1,11 @@
 # https://hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
 
+# Color Options
+# load the catppuccin tmux plugin
+# https://github.com/catppuccin/tmux?tab=readme-ov-file#manual-recommended
+# TODO: Write a script to download the catppuccin-tmux plugin and add the cyberdream themes to the plugin when setup.sh is ran
+set -g @catppuccin_flavor "cyberdream"
+run ~/.local/src/catppuccin-tmux/catppuccin.tmux
 
 # True Color
 set -g default-terminal "tmux-256color"
