@@ -41,6 +41,9 @@ start_tanf () {
   tmux split-window -h -t $SESSION_NAME:1 -c $TANF_FRONTEND_DIR
   tmux split-window -v -t $SESSION_NAME:1.1 -c $TANF_FRONTEND_DIR
 
+  # start colima
+  colima start
+
   # Run code on window panes
   tmux send-keys -t $SESSION_NAME:1.0 'docker compose up --build' C-m
   tmux send-keys -t $SESSION_NAME:1.1 'docker compose up --build' C-m

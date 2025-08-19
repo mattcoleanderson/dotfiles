@@ -35,10 +35,13 @@ zstyle ':completion:*:corrections' format ' %F{green}-- %d (errors: %e) --%f'
 zstyle ':completion:*:descriptions' format ' %F{green}-- %d --%f'
 zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
 zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
-zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+# zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+zstyle ':completion:*' list-prompt '' # disables prompt: "Do you wish to see all 234 possibilities (Y/n)?"
 zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose yes
+
+# zstyle ':completion:*' select-prompt ''
 
 # Fuzzy match mistyped completions.
 zstyle ':completion:*' completer _complete _match _approximate
