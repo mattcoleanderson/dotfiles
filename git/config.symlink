@@ -1,9 +1,19 @@
 [user]
   name = "Matt Cole Anderson"
-  email = "git@mattcoleanderson.com"
+  email = "github@mattcoleanderson.com"
+  signingkey = ~/.ssh/id_ed25519.pub
 
 [pull]
-	ff = only
+  ff = only
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  allowedSignersFile = ~/.local/config/git/allowed_signers
+
+[commit]
+  gpgsign = true
 
 [includeIf "gitdir:~/repos/work/"]
   path = ./config-work
