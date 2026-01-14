@@ -1,4 +1,4 @@
-# You can use it to add commands that run after login to macOS user session.
+# Yod can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
 after-login-command = []
@@ -7,26 +7,27 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
+  'layout tiles'
   # 'exec-and-forget borders active_color=0xffe2e2e3 inactive_color=0xff414550 width=6.0'
-  'move-workspace-to-monitor --workspace 1.Code ka270h secondary main',
-  'move-workspace-to-monitor --workspace 2.Browse main',
-  'move-workspace-to-monitor --workspace 3.Entertainment main',
-  'move-workspace-to-monitor --workspace 4.Comms main',
-  'move-workspace-to-monitor --workspace 5.System secondary main',
-  'move-workspace-to-monitor --workspace 6.Productivity main',
-  'move-workspace-to-monitor --workspace 7 secondary main',
-  'move-workspace-to-monitor --workspace 8 main',
-  'move-workspace-to-monitor --workspace 9 secondary main',
-  'move-workspace-to-monitor --workspace 10 main',
-  'workspace 1.Code', 'workspace 2.Browse',
-  'workspace 1.Code', 'workspace 2.Browse',
+  # 'move-workspace-to-monitor --workspace 1.Code ka270h secondary main',
+  # 'move-workspace-to-monitor --workspace 2.Browse main',
+  # 'move-workspace-to-monitor --workspace 3.Entertainment main',
+  # 'move-workspace-to-monitor --workspace 4.Comms main',
+  # 'move-workspace-to-monitor --workspace 5.System secondary main',
+  # 'move-workspace-to-monitor --workspace 6.Productivity main',
+  # 'move-workspace-to-monitor --workspace 7 secondary main',
+  # 'move-workspace-to-monitor --workspace 8 main',
+  # 'move-workspace-to-monitor --workspace 9 secondary main',
+  # 'move-workspace-to-monitor --workspace 10 main',
+  # 'workspace 1.Code', 'workspace 2.Browse',
+  # 'workspace 1.Code', 'workspace 2.Browse',
 ]
 
 # Start AeroSpace at login
 start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
-enable-normalization-flatten-containers = true
+enable-normalization-flatten-containers = false
 enable-normalization-opposite-orientation-for-nested-containers = true
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
@@ -91,29 +92,11 @@ outer.right =      10
 
 # Workspace - Establish my workspaces and the commands to switch to them
 #     See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-shift-ctrl-cmd-1 = 'workspace 1.Code'
-alt-shift-ctrl-cmd-2 = 'workspace 2.Browse'
-alt-shift-ctrl-cmd-3 = 'workspace 3.Entertainment'
-alt-shift-ctrl-cmd-4 = 'workspace 4.Comms'
-alt-shift-ctrl-cmd-5 = 'workspace 5.System'
-alt-shift-ctrl-cmd-6 = 'workspace 6.Productivity'
-alt-shift-ctrl-cmd-7 = 'workspace 7'
-alt-shift-ctrl-cmd-8 = 'workspace 8'
-alt-shift-ctrl-cmd-9 = 'workspace 9'
-alt-shift-ctrl-cmd-0 = 'workspace 10'
+alt-shift-ctrl-cmd-m = 'workspace Main'
 
 # Move Node to Workspace - Moves the focues application to a specific workspace
 #     See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-ctrl-1 = 'move-node-to-workspace 1.Code'
-alt-shift-ctrl-2 = 'move-node-to-workspace 2.Browse'
-alt-shift-ctrl-3 = 'move-node-to-workspace 3.Entertainment'
-alt-shift-ctrl-4 = 'move-node-to-workspace 4.Comms'
-alt-shift-ctrl-5 = 'move-node-to-workspace 5.System'
-alt-shift-ctrl-6 = 'move-node-to-workspace 6.Productivity'
-alt-shift-ctrl-7 = 'move-node-to-workspace 7'
-alt-shift-ctrl-8 = 'move-node-to-workspace 8'
-alt-shift-ctrl-9 = 'move-node-to-workspace 9'
-alt-shift-ctrl-0 = 'move-node-to-workspace 10'
+alt-shift-ctrl-m = 'move-node-to-workspace Main'
 
 # Focus - change focused window using cardinal directions
 #     See: https://nikitabobko.github.io/AeroSpace/commands#focus
@@ -158,10 +141,29 @@ s = 'exec-and-forget ~/repos/dotfiles/aerospace/swap-workspace-monitors.sh --wra
 t = ['layout tiles horizontal vertical', 'mode main']
 a = ['layout accordion horizontal vertical', 'mode main']
 
+f = ['fullscreen', 'mode main']
+
+2 = [
+  'flatten-workspace-tree',
+  'layout h_tiles',
+  'focus --dfs-index 0',
+  'mode main'
+]
+
+3 = [
+  'flatten-workspace-tree',
+  'layout h_tiles',
+  'focus --dfs-index 0',
+  'split vertical',
+  'focus --dfs-index 2',
+  'join-with right',
+  'mode main'
+]
+
 # Custom Layouts
 g = [                                                           # Grid Layout of focused window
-  'layout h_tiles',
   'flatten-workspace-tree',
+  'layout h_tiles',
   'focus --dfs-index 0',
   'focus --boundaries-action wrap-around-the-workspace left',
   'join-with left',
@@ -171,7 +173,6 @@ g = [                                                           # Grid Layout of
   'mode main'
 ]
 
-f = ['fullscreen', 'mode main']
 
 # Join Binding - Sub binding of Layout to join apps
 #     See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -215,72 +216,72 @@ backspace = ['close-all-windows-but-current', 'mode main']
 # - https://nikitabobko.github.io/AeroSpace/goodness#popular-apps-ids
 # - `aerospace list-apps`
 
-[[on-window-detected]]
-if.app-id = 'com.apple.systempreferences'
-run = ['layout floating']
-
-
-# Workspace 1 Code
-[[on-window-detected]]
-if.app-id = 'com.googlecode.iterm2'
-run = ['move-node-to-workspace 1.Code']
-
-[[on-window-detected]]
-if.app-id = 'com.github.wez.wezterm'
-run = ['move-node-to-workspace 1.Code']
-
-[[on-window-detected]]
-if.app-id = 'com.jetbrains.datagrip'
-run = ['move-node-to-workspace 1.Code']
-
-[[on-window-detected]]
-if.app-id = 'com.postmanlabs.mac'
-run = ['move-node-to-workspace 1.Code']
-
-# Workspace 2 Browse
-[[on-window-detected]]
-if.app-id = 'company.thebrowser.Browser'
-if.during-aerospace-startup = true
-run = ['move-node-to-workspace 2.Browse']
-
-# Workspace 3 Entertainment
-[[on-window-detected]]
-if.app-id = 'com.apple.Music'
-run = ['move-node-to-workspace 3.Entertainment']
-
-[[on-window-detected]]
-if.app-id = 'com.flexibits.fantastical2.mac'
-run = ['move-node-to-workspace 3.Entertainment']
-
-[[on-window-detected]]
-if.app-id = 'com.todoist.mac.Todoist'
-run = ['move-node-to-workspace 3.Entertainment']
-
-# Workspace 4 Comms
-[[on-window-detected]]
-if.app-id = 'com.apple.MobileSMS'
-run = ['move-node-to-workspace 4.Comms']
-
-[[on-window-detected]]
-if.app-id = 'ch.protonmail.desktop'
-run = ['move-node-to-workspace 4.Comms']
-
-[[on-window-detected]]
-if.app-id = 'Mattermost.Desktop'
-run = ['move-node-to-workspace 4.Comms']
-
-[[on-window-detected]]
-if.app-id = 'com.microsoft.Outlook'
-run = ['move-node-to-workspace 4.Comms']
-
-[[on-window-detected]]
-if.app-id = 'com.microsoft.teams2'
-run = ['move-node-to-workspace 4.Comms']
-
-# Workspace 5 System
-[[on-window-detected]]
-if.app-id = 'io.zsa.keymapp'
-run = ['move-node-to-workspace 5.System']
+# [[on-window-detected]]
+# if.app-id = 'com.apple.systempreferences'
+# run = ['layout floating']
+#
+#
+# # Workspace 1 Code
+# [[on-window-detected]]
+# if.app-id = 'com.googlecode.iterm2'
+# run = ['move-node-to-workspace 1.Code']
+#
+# [[on-window-detected]]
+# if.app-id = 'com.github.wez.wezterm'
+# run = ['move-node-to-workspace 1.Code']
+#
+# [[on-window-detected]]
+# if.app-id = 'com.jetbrains.datagrip'
+# run = ['move-node-to-workspace 1.Code']
+#
+# [[on-window-detected]]
+# if.app-id = 'com.postmanlabs.mac'
+# run = ['move-node-to-workspace 1.Code']
+#
+# # Workspace 2 Browse
+# [[on-window-detected]]
+# if.app-id = 'company.thebrowser.Browser'
+# if.during-aerospace-startup = true
+# run = ['move-node-to-workspace 2.Browse']
+#
+# # Workspace 3 Entertainment
+# [[on-window-detected]]
+# if.app-id = 'com.apple.Music'
+# run = ['move-node-to-workspace 3.Entertainment']
+#
+# [[on-window-detected]]
+# if.app-id = 'com.flexibits.fantastical2.mac'
+# run = ['move-node-to-workspace 3.Entertainment']
+#
+# [[on-window-detected]]
+# if.app-id = 'com.todoist.mac.Todoist'
+# run = ['move-node-to-workspace 3.Entertainment']
+#
+# # Workspace 4 Comms
+# [[on-window-detected]]
+# if.app-id = 'com.apple.MobileSMS'
+# run = ['move-node-to-workspace 4.Comms']
+#
+# [[on-window-detected]]
+# if.app-id = 'ch.protonmail.desktop'
+# run = ['move-node-to-workspace 4.Comms']
+#
+# [[on-window-detected]]
+# if.app-id = 'Mattermost.Desktop'
+# run = ['move-node-to-workspace 4.Comms']
+#
+# [[on-window-detected]]
+# if.app-id = 'com.microsoft.Outlook'
+# run = ['move-node-to-workspace 4.Comms']
+#
+# [[on-window-detected]]
+# if.app-id = 'com.microsoft.teams2'
+# run = ['move-node-to-workspace 4.Comms']
+#
+# # Workspace 5 System
+# [[on-window-detected]]
+# if.app-id = 'io.zsa.keymapp'
+# run = ['move-node-to-workspace 5.System']
 
 # Workspace 6.Productivity
 
