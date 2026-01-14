@@ -20,11 +20,14 @@ do
   source $file
 done
 
+# set vim mode
+bindkey -v
+
 # Initialize autocomplete
 # autoload -Uz compinit && compinit
 # I'm using zsh-autocomplete plugin to handle autocomplete for me so we don't need to compinit
 # install via git (NOT homebrew, the brew package wasn't autocompleteing on typing)
-# bindkey -v # set vim mode
+
 source ~/.local/src/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Load Completion Files
