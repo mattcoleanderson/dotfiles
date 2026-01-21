@@ -92,11 +92,29 @@ outer.right =      10
 
 # Workspace - Establish my workspaces and the commands to switch to them
 #     See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-shift-ctrl-cmd-m = 'workspace Main'
+alt-shift-ctrl-cmd-1 = 'workspace Main'
+alt-shift-ctrl-cmd-2 = 'workspace Secondary'
+alt-shift-ctrl-cmd-3 = 'workspace Tertiary'
+alt-shift-ctrl-cmd-4 = 'workspace Quaternary'
+alt-shift-ctrl-cmd-5 = 'workspace Quinary'
+alt-shift-ctrl-cmd-6 = 'workspace Senary'
+alt-shift-ctrl-cmd-7 = 'workspace Septenary'
+alt-shift-ctrl-cmd-8 = 'workspace Octonary'
+alt-shift-ctrl-cmd-9 = 'workspace Nonary'
+alt-shift-ctrl-cmd-0 = 'workspace Denary'
 
 # Move Node to Workspace - Moves the focues application to a specific workspace
 #     See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-ctrl-m = 'move-node-to-workspace Main'
+alt-shift-ctrl-1 = 'move-node-to-workspace Main'
+alt-shift-ctrl-2 = 'move-node-to-workspace Secondary'
+alt-shift-ctrl-3 = 'move-node-to-workspace Tertiary'
+alt-shift-ctrl-4 = 'move-node-to-workspace Quaternary'
+alt-shift-ctrl-5 = 'move-node-to-workspace Quinary'
+alt-shift-ctrl-6 = 'move-node-to-workspace Senary'
+alt-shift-ctrl-7 = 'move-node-to-workspace Septenary'
+alt-shift-ctrl-8 = 'move-node-to-workspace Octonary'
+alt-shift-ctrl-9 = 'move-node-to-workspace Nonary'
+alt-shift-ctrl-0 = 'move-node-to-workspace Denary'
 
 # Focus - change focused window using cardinal directions
 #     See: https://nikitabobko.github.io/AeroSpace/commands#focus
