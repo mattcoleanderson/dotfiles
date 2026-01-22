@@ -1,3 +1,5 @@
+config-version = 2
+
 # Yod can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
@@ -54,6 +56,12 @@ key-mapping.preset = 'qwerty'
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+# List of workspaces that should stay alive even when they contain no windows,
+# even when they are invisible.
+# This config version is only available since 'config-version = 2'
+# Fallback value (if you omit the key): persistent-workspaces = []
+persistent-workspaces = ['Primary']
+
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
 # - Constant:     gaps.outer.top = 8
@@ -92,7 +100,7 @@ outer.right =      10
 
 # Workspace - Establish my workspaces and the commands to switch to them
 #     See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-shift-ctrl-cmd-1 = 'workspace Main'
+alt-shift-ctrl-cmd-1 = 'workspace Primary'
 alt-shift-ctrl-cmd-2 = 'workspace Secondary'
 alt-shift-ctrl-cmd-3 = 'workspace Tertiary'
 alt-shift-ctrl-cmd-4 = 'workspace Quaternary'
@@ -105,7 +113,7 @@ alt-shift-ctrl-cmd-0 = 'workspace Denary'
 
 # Move Node to Workspace - Moves the focues application to a specific workspace
 #     See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-ctrl-1 = 'move-node-to-workspace Main'
+alt-shift-ctrl-1 = 'move-node-to-workspace Primary'
 alt-shift-ctrl-2 = 'move-node-to-workspace Secondary'
 alt-shift-ctrl-3 = 'move-node-to-workspace Tertiary'
 alt-shift-ctrl-4 = 'move-node-to-workspace Quaternary'
