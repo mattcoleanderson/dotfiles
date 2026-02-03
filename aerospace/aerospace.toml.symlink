@@ -60,7 +60,19 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ['Primary']
+persistent-workspaces = ['Primary', 'Secondary']
+
+[workspace-to-monitor-force-assignment]
+  'Primary' = 'main'
+  'Secondary' = 'secondary'
+  'Tertiary' = 'main'
+  'Quaternary' = 'secondary'
+  'Quinary' = 'main'
+  'Senary' = 'secondary'
+  'Septenary' = 'main'
+  'Octonary' = 'secondary'
+  'Nonary' = 'main'
+  'Denary' = 'secondary'
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
