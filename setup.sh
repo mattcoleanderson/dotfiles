@@ -86,7 +86,7 @@ run_dotfiles () {
     elif [[ "$extension" == 'plist' ]]; then
       dst="$HOME/Library/LaunchAgents/$file"
     # Symlink directories
-    elif [[ "$(basename $(dirname $src))" == 'dotfiles' ]]; then
+    elif [[ -d "$src" ]]; then
       dst="$XDG_CONFIG_HOME/$file"
     # Symlink files
     else
