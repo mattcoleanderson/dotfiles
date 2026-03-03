@@ -15,4 +15,8 @@ config.colors = require('cyberdream')
 config.window_background_opacity = 0.85
 config.macos_window_background_blur = 30
 
+-- Make Option key behave like Alt/Meta instead of typing special characters
+config.send_composed_key_when_left_alt_is_pressed = false
+config.send_composed_key_when_right_alt_is_pressed = false
+
 return config
