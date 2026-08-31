@@ -36,7 +36,8 @@ zstyle ':completion:*:descriptions' format ' %F{green}-- %d --%f'
 zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
 zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
 # zstyle ':completion:*:default' list-prompt '%S%M matches%s'
-zstyle ':completion:*' list-prompt '' # disables prompt: "Do you wish to see all 234 possibilities (Y/n)?"
+LISTMAX=0                             # never ask "do you wish to see all N possibilities?"
+zstyle ':completion:*' list-prompt '' # disables prompt at bottom of paged completion list
 zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose yes
