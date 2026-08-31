@@ -1,20 +1,56 @@
 -- cyberdream theme for wezterm
 -- https://github.com/scottmckendry/cyberdream.nvim/blob/f660ebfd8840e226d2a5368e08108a7aa84fef36/extras/wezterm/cyberdream-light.lua
 return {
-    foreground = "#16181a",
-    background = "#ffffff",
+	colors = {
+		foreground = "#16181a",
+		background = "#ffffff",
 
-    cursor_bg = "#16181a",
-    cursor_fg = "#ffffff",
-    cursor_border = "#16181a",
+		cursor_bg = "#16181a",
+		cursor_fg = "#ffffff",
+		cursor_border = "#16181a",
 
-    selection_fg = "#16181a",
-    selection_bg = "#acacac",
+		selection_fg = "#16181a",
+		selection_bg = "#acacac",
 
-    scrollbar_thumb = "#ffffff",
-    split = "#ffffff",
+		scrollbar_thumb = "#ffffff",
+		split = "#ffffff",
 
-    ansi = { "#ffffff", "#d11500", "#008b0c", "#997b00", "#0057d1", "#a018ff", "#008c99", "#16181a" },
-    brights = { "#acacac", "#d11500", "#008b0c", "#997b00", "#0057d1", "#a018ff", "#008c99", "#16181a" },
-    indexed = { [16] = "#d17c00", [17] = "#d11500" },
+		ansi = { "#ffffff", "#d11500", "#008b0c", "#997b00", "#0057d1", "#a018ff", "#008c99", "#16181a" },
+		brights = { "#acacac", "#d11500", "#008b0c", "#997b00", "#0057d1", "#a018ff", "#008c99", "#16181a" },
+		indexed = { [16] = "#d17c00", [17] = "#d11500" },
+
+		tab_bar = {
+			background = "#eaeaea",
+			inactive_tab_edge = "#c5c6cd",
+			active_tab = {
+				bg_color = "#e0e2ea",
+				fg_color = "#16181a",
+			},
+			inactive_tab = {
+				bg_color = "#c5c6cd",
+				fg_color = "#4f5258",
+			},
+			inactive_tab_hover = {
+				bg_color = "#acacac",
+				fg_color = "#16181a",
+			},
+			new_tab = {
+				bg_color = "#eaeaea",
+				fg_color = "#7b8496",
+			},
+			new_tab_hover = {
+				bg_color = "#acacac",
+				fg_color = "#16181a",
+			},
+		},
+	},
+	window_frame = {
+		-- The overall background color of the tab bar when
+		-- the window is focused
+		active_titlebar_bg = "#B3B4BB",
+
+		-- The overall background color of the tab bar when
+		-- the window is not focused
+		inactive_titlebar_bg = "#333333",
+	},
 }

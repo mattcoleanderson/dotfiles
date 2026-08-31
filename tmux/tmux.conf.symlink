@@ -8,7 +8,8 @@ set-option -ga terminal-overrides ",*:Tc"
 # load the catppuccin tmux plugin
 # https://github.com/catppuccin/tmux?tab=readme-ov-file#manual-recommended
 # TODO: Write a script to download the catppuccin-tmux plugin and add the cyberdream themes to the plugin when setup.sh is ran
-set -g @catppuccin_flavor "cyberdream"
+# Auto-detect macOS dark/light mode
+run 'if [ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" = "Dark" ]; then tmux set -g @catppuccin_flavor "cyberdream"; else tmux set -g @catppuccin_flavor "cyberdreamlight"; fi'
 set -g @catppuccin_window_status_style "rounded"
 # Auto rename windows
 set -g @catppuccin_window_current_text " #{window_name}"
@@ -51,4 +52,7 @@ bind -n M-l select-pane -R
 
 # bind r to reloading the tmux.conf
 bind r source-file "$XDG_CONFIG_HOME/tmux/tmux.conf" \; display-message "tmux.conf reloaded"
+
+# Re-source on focus to sync dark/light mode
+set-hook -g client-focus-in "source-file $XDG_CONFIG_HOME/tmux/tmux.conf"
 

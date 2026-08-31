@@ -6,11 +6,27 @@ local wezterm = require('wezterm')
 ---@type Config
 local config = wezterm.config_builder()
 
-config.font = wezterm.font('Iosevka Nerd Font Mono')
+local font = 'Iosevka Nerd Font Mono'
+
+config.font = wezterm.font(font)
 config.font_size = 14
 
-config.colors = require('cyberdream')
--- config.colors = require('cyberdream-light')
+-- SET COLOSCHEME
+
+local function scheme_for_appearance(appearance)
+  if appearance:find('Dark') then
+    return require('cyberdream')
+  else
+    return require('cyberdream-light')
+  end
+end
+
+local colorscheme = scheme_for_appearance(wezterm.gui.get_appearance())
+
+config.window_frame = colorscheme.window_frame
+config.window_frame.font = wezterm.font { family = font, weight = 'Bold' }
+
+config.colors = colorscheme.colors
 
 config.window_background_opacity = 0.85
 config.macos_window_background_blur = 30
