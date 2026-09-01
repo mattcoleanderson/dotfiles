@@ -5,7 +5,7 @@ macOS dotfiles for bootstrapping a new machine. Configs are grouped by tool/topi
 ## Commands
 
 - Install Homebrew dependencies with `brew bundle --file=homebrew/Brewfile`.
-- Run `./setup.sh` for full install; it prompts first, creates gitignored `env/env.zsh` if missing, then force-updates symlinks with `ln -nsf`.
+- Run `./setup.sh` for full install; it prompts first, creates gitignored `env/env.zsh` if missing, installs the Catppuccin tmux plugin if needed, then force-updates symlinks with `ln -nsf`.
 - There is no test suite or CI config in this repo; verify shell changes with targeted syntax checks such as `zsh -n <file>` when practical.
 
 ## Setup Behavior

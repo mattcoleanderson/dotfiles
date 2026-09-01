@@ -66,6 +66,31 @@ link_file () {
   success "linked $src to $dst"
 }
 
+install_catppuccin_tmux () {
+  local plugin_dir="$HOME/.local/src/catppuccin-tmux"
+
+  if [[ ! -d "$plugin_dir/.git" ]]; then
+    if [[ -e "$plugin_dir" ]]; then
+      fail "$plugin_dir exists but is not a git repository"
+      return 1
+    fi
+
+    info 'installing catppuccin tmux plugin'
+    mkdir -p "$HOME/.local/src"
+    git clone --branch v2.1.3 --depth 1 https://github.com/catppuccin/tmux.git "$plugin_dir"
+    success 'catppuccin tmux plugin installed'
+  else
+    success 'catppuccin tmux plugin already installed'
+  fi
+
+  link_file \
+    "$DOTFILES/tmux/cyberdream.conf" \
+    "$plugin_dir/themes/catppuccin_cyberdream_tmux.conf"
+  link_file \
+    "$DOTFILES/tmux/cyberdream-light.conf" \
+    "$plugin_dir/themes/catppuccin_cyberdreamlight_tmux.conf"
+}
+
 run_dotfiles () {
   # . "$DOTFILES/setup/setup-zsh.sh"
 
@@ -117,5 +142,5 @@ EOF
 
 run_prompt
 create_env_config
+install_catppuccin_tmux
 run_dotfiles
-
