@@ -52,6 +52,10 @@ bind -n M-l select-pane -R
 # Switch windows using Meta-arrow without prefix
 bind -n M-n next-window
 bind -n M-p previous-window
+bind -n M-Tab last-window
+bind -n M-z resize-pane -Z
+bind -n M-w choose-tree -Zw
+
 
 # bind r to reloading the tmux.conf
 bind r source-file "$XDG_CONFIG_HOME/tmux/tmux.conf" \; display-message "tmux.conf reloaded"
