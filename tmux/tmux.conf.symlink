@@ -16,6 +16,9 @@ set -g @catppuccin_window_text " #{window_name}"
 # set -g @catppuccin_window_current_text " #(basename #{pane_current_path})"
 # set -g @catppuccin_window_text " #(basename #{pane_current_path})"
 
+# Softer blue for the active tmux pane border
+set -g @catppuccin_pane_active_border_style "fg=#7aa2d6"
+
 run ~/.local/src/catppuccin-tmux/catppuccin.tmux
 
 # Status line
